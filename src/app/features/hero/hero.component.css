@@ -1,0 +1,119 @@
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 6rem 1rem;
+  position: relative;
+  /* profile image as background with semi-transparent overlay for contrast */
+  background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/assets/profile.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+
+  .profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid #00bfff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    animation: fadeIn 1.2s ease-in-out;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin: 0.5rem 0;
+    animation: slideUp 1s ease;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    color: #00bfff;
+    margin-bottom: 1rem;
+  }
+
+  .skills {
+    display: flex;
+    justify-content:flex-start;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+
+    .skill {
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.1);
+      transition: 0.3s;
+      cursor: default;
+
+      &:hover {
+        background: #00bfff;
+        color: #fff;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    .btn {
+      padding: 0.8rem 1.8rem;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: all 0.3s;
+      text-decoration: none;
+
+      &.btn-primary {
+        background: #00bfff;
+        color: #fff;
+
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0 5px 15px rgba(0,191,255,0.4);
+        }
+      }
+
+      &.btn-outline {
+        border: 2px solid #00bfff;
+        color: #00bfff;
+
+        &:hover {
+          background: #00bfff;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.about-section {
+  padding: 4rem 1rem;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #05a8e8;
+    line-height: 1.6;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
