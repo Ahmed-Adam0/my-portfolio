@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
   selector: '[appTilt]',
@@ -6,44 +6,48 @@ import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/
 })
 export class TiltDirective {
   @Input() tiltScale: number = 1.05;
-  @Input() tiltRotation: number = 10;
-  @Input() tiltSpeed: number = 400;
+  @Input() tiltRotation: number = 5;
+  @Input() tiltTransition: string = 'transform 0.6s cubic-bezier(0.23, 1, 0.320, 1)';
 
-  private originalTransform = '';
-  private isMoving = false;
-  private timeoutId: any;
+  private element: HTMLElement;
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {
-    this.originalTransform = this.el.nativeElement.style.transform || '';
+  constructor(el: ElementRef) {
+    this.element = el.nativeElement;
+    this.element.style.perspective = '1000px';
+    this.element.style.transformStyle = 'preserve-3d';
+    this.element.style.transition = this.tiltTransition;
   }
 
   @HostListener('mousemove', ['$event'])
-  onMouseMove(event: MouseEvent) {
-    if (this.isMoving) return;
-    this.isMoving = true;
-
-    const rect = this.el.nativeElement.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const rotateX = ((y - centerY) / centerY) * this.tiltRotation;
-    const rotateY = ((centerX - x) / centerX) * this.tiltRotation;
-
-    const transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(${this.tiltScale})`;
-    
-    this.renderer.setStyle(this.el.nativeElement, 'transform', transform);
-    this.renderer.setStyle(this.el.nativeElement, 'transition', `transform ${this.tiltSpeed}ms cubic-bezier(0.23, 1, 0.32, 1)`);
-    
-    setTimeout(() => this.isMoving = false, 16);
+  onMouseMove(event: MouseEvent): void {
+    this.updateTilt(event);
   }
 
   @HostListener('mouseleave')
-  onMouseLeave() {
-    if (this.timeoutId) clearTimeout(this.timeoutId);
-    this.timeoutId = setTimeout(() => {
-      this.renderer.setStyle(this.el.nativeElement, 'transform', this.originalTransform);
-      this.renderer.setStyle(this.el.nativeElement, 'transition', `transform ${this.tiltSpeed}ms ease-out`);
-    }, 50);
+  onMouseLeave(): void {
+    this.resetTilt();
+  }
+
+  private updateTilt(event: MouseEvent): void {
+    const rect = this.element.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    const rotateX = ((y / rect.height) - 0.5) * this.tiltRotation * 2;
+    const rotateY = ((x / rect.width) - 0.5) * this.tiltRotation * -2;
+
+    this.element.style.transform = `
+      scale(${this.tiltScale})
+      rotateX(${rotateX}deg)
+      rotateY(${rotateY}deg)
+    `;
+  }
+
+  private resetTilt(): void {
+    this.element.style.transform = `
+      scale(1)
+      rotateX(0deg)
+      rotateY(0deg)
+    `;
   }
 }

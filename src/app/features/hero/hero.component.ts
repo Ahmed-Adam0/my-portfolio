@@ -1,4 +1,4 @@
-import { Component, inject, AfterViewInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { TypewriterDirective } from '../../directives/typewriter.directive';
@@ -8,34 +8,44 @@ import { trigger, transition, style, animate } from '@angular/animations';
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule, TranslateModule, TypewriterDirective],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './hero.component.html',
-  styleUrls: ['./hero.component.css'],
+  styleUrl: './hero.component.css',
   animations: [
     trigger('heroAnimation', [
       transition(':enter', [
         style({ opacity: 0, transform: 'translateY(30px)' }),
-        animate('0.6s ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+        animate('800ms 200ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
       ])
     ]),
     trigger('ctaAnimation', [
       transition(':enter', [
         style({ opacity: 0, transform: 'scale(0.9)' }),
-        animate('0.4s 0.3s ease-out', style({ opacity: 1, transform: 'scale(1)' }))
+        animate('600ms 600ms ease-out', style({ opacity: 1, transform: 'scale(1)' }))
       ])
     ])
   ]
 })
-export class HeroComponent implements AfterViewInit {
+export class HeroComponent implements OnInit {
   private animationService = inject(AnimationService);
-  
-  currentRole = 'Full Stack Developer';
 
-  ngAfterViewInit(): void {
-    this.animationService.refreshAOS();
+  roles = ['Full Stack Developer', 'Creative Coder', 'UI/UX Enthusiast'];
+  currentRole = this.roles[0];
+  roleIndex = 0;
+
+  ngOnInit(): void {
+    this.rotateRoles();
+  }
+
+  private rotateRoles(): void {
+    setInterval(() => {
+      this.roleIndex = (this.roleIndex + 1) % this.roles.length;
+      this.currentRole = this.roles[this.roleIndex];
+    }, 4000);
   }
 
   scrollToProjects(): void {
-    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+    const projectsSection = document.querySelector('app-projects');
+    projectsSection?.scrollIntoView({ behavior: 'smooth' });
   }
 }
