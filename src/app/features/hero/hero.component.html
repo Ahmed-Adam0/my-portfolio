@@ -1,42 +1,91 @@
 <section id="home" class="hero-section" [@heroAnimation]>
   <div class="hero-container">
     <div class="hero-content">
-  <div class="profile-container">
-    <img src="assets/profile.jpg.png" alt="Ahmed Adam" class="profile-img">
-    <h1>Ahmed Adam</h1>
-    <h2>Junior Full Stack Web Developer</h2>
-    <div class="skills">
-      <span class="skill">Angular</span>
-      <span class="skill">HTML</span>
-      <span class="skill">CSS</span>
-      <span class="skill">Bootstrap</span>
-      <span class="skill">JavaScript</span>
-      <span class="skill">.NET</span>
-      <span class="skill">SQL Server</span>
+      <div class="greeting" data-aos="fade-up">
+        <span class="wave">👋</span>
+        <span>{{ 'hero.greeting' | translate }}</span>
+      </div>
+
+      <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+        <span class="name">أحمد آدم</span>
+      </h1>
+
+      <div class="role-container" data-aos="fade-up" data-aos-delay="200">
+        <span class="role-label">{{ 'hero.title' | translate }}:</span>
+        <span
+          class="typewriter-text"
+          [appTypewriter]="currentRole"
+          [speed]="50"
+          [delay]="400"
+          [shouldLoop]="true"
+        ></span>
+      </div>
+
+      <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
+        {{ 'hero.description' | translate }}
+      </p>
+
+ <div class="skills-badge" data-aos="fade-up" data-aos-delay="400">
+  <span class="badge">HTML</span>
+  <span class="badge">CSS</span>
+  <span class="badge">JavaScript</span>
+  <span class="badge">TypeScript</span>
+  <span class="badge">Angular</span>
+  <span class="badge">Bootstrap</span>
+  <span class="badge">Responsive Design</span>
+  <span class="badge">REST API</span>
+  <span class="badge">.NET 6</span>
+  <span class="badge">C#</span>
+  <span class="badge">Entity Framework</span>
+  <span class="badge">LINQ</span>
+  <span class="badge">SQL Server</span>
+  <span class="badge">OOP</span>
+  <span class="badge">Design Patterns</span>
+  <span class="badge">Git</span>
+  <span class="badge">GitHub</span>
+  <span class="badge">GSAP</span>
+</div>
+
+      <div class="cta-buttons" [@ctaAnimation]>
+        <button class="btn btn-primary" (click)="scrollToProjects()">
+          <span>{{ 'hero.cta' | translate }}</span>
+          <span class="arrow">→</span>
+        </button>
+        <a href="#contact" class="btn btn-secondary">
+          <span>{{ 'hero.skills' | translate }}</span>
+        </a>
+      </div>
     </div>
-    <div class="hero-buttons">
-      <a href="#projects" class="btn btn-primary">
-        <span>View Projects</span>
-      </a>
-      <a href="#contact" class="btn btn-outline">
-        <span>Contact Me</span>
-      </a>
+
+    <div class="hero-visual" data-aos="fade-left" data-aos-delay="200">
+      <div class="floating-card card-1">
+        <div class="card-icon">📱</div>
+        <p>Responsive Design</p>
+      </div>
+
+      <div class="hero-visual" data-aos="fade-left" data-aos-delay="200">
+      <div class="profile-image-wrapper">
+        <div class="profile-image">
+          <img src="assets/images/WhatsApp Image 2026-05-01 at 11.50.10 PM.jpeg" alt="Ahmed Adam">
+          <div class="image-glow"></div>
+        </div>
+      </div>
+    </div>
+
+      <div class="floating-card card-2">
+        <div class="card-icon">⚡</div>
+        <p>High Performance</p>
+      </div>
+      <div class="floating-card card-3">
+        <div class="card-icon">🎨</div>
+        <p>Modern UI/UX</p>
+      </div>
     </div>
   </div>
-</div>
 
-<div id="about" class="about-section">
-  <h3>About Me</h3>
-  <p>
-    I’m a Junior Full Stack Web Developer passionate about building web applications using Angular and .NET. I enjoy learning by building real projects and improving my skills step by step.
-  </p>
-  <h3>Skills</h3>
-  <p>
-    - Proficient in Angular for front-end development.<br>
-    - Experienced with .NET for back-end development.<br>
-    - Knowledgeable in SQL Server for database management.<br>
-    - Strong problem-solving and debugging skills.<br>
-    - Eager to learn new technologies and improve my development skills.
-  </p>
-</div>
-
+  <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="800">
+    <div class="mouse">
+      <div class="wheel"></div>
+    </div>
+  </div>
+</section>
