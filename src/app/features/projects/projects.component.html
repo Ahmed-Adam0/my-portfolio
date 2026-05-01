@@ -1,55 +1,32 @@
-<section class="projects" id="projects">
-  <h2>My Projects</h2>
+<section id="projects" class="projects-section">
+  <div class="projects-container">
+    <div class="section-header" data-aos="fade-up">
+      <h2>{{ 'projects.title' | translate }}</h2>
+      <p>{{ 'projects.description' | translate }}</p>
+    </div>
 
-  <!-- Project 1 -->
-  <div class="project-card">
-    <h3>MoviesAPI</h3>
-    <p>
-      web API built using .NET Core 5 for managing a movie database.
-      Features full CRUD functionality with Entity Framework Core.
-    </p>
-    <span>.NET • SQL Server</span>
-    <div class="links">
-      <a href="https://github.com/Ahmed-Adam0/moviesCore5CRUD" target="_blank">GitHub</a>
+    <div class="projects-grid">
+      <div
+        *ngFor="let project of projects; let i = index"
+        class="project-card"
+        data-aos="fade-up"
+        [attr.data-aos-delay]="100 + i * 100"
+      >
+        <div class="card-icon-wrapper">
+          <span class="card-icon">{{ project.icon }}</span>
+        </div>
+        <div class="card-content">
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.description }}</p>
+          <div class="tags">
+            <span *ngFor="let tag of project.tags" class="tag">{{ tag }}</span>
+          </div>
+          <a href="#" class="card-link">
+            {{ 'projects.viewDetails' | translate }}
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
-
-  <!-- Project 2 -->
-  <div class="project-card">
-    <h3>Game-Zone2 Application</h3>
-    <p>
-      Full Stack CRUD app using frontend and .NET MVC backend.
-      Implements Create, Read, Update, and Delete operations.
-    </p>
-    <span>.NET • SQL Server</span>
-    <div class="links">
-      <a href="https://github.com/Ahmed-Adam0/Game-Zone2" target="_blank">GitHub</a>
-    </div>
-  </div>
-
-  <!-- Project 3 -->
-  <div class="project-card">
-    <h3>Responsive Portfolio</h3>
-    <p>
-      My personal portfolio website built with Angular and Bootstrap.
-      Fully responsive for mobile and desktop screens.
-    </p>
-    <span>Angular • Bootstrap • CSS</span>
-    <div class="links">
-      <a href="https://github.com/Ahmed-Adam0/my-portfolio" target="_blank">GitHub</a>
-    </div>
-  </div>
-
-  <!-- Project 4 -->
-  <div class="project-card">
-    <h3>Sign Up Form</h3>
-    <p>
-      Simple form registration and login application with Angular. Users can add, edit, and delete tasks.
-    </p>
-    <span>Angular • TypeScript • LocalStorage</span>
-    <div class="links">
-      <a href="https://github.com/Ahmed-Adam0/app" target="_blank">GitHub</a>
-    </div>
-  </div>
-
 </section>

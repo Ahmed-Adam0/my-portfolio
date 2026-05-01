@@ -1,13 +1,92 @@
-<section class="contact" id="contact">
-  <h2>Contact</h2>
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    <div class="section-header" data-aos="fade-up">
+      <h2>{{ 'contact.title' | translate }}</h2>
+      <p>{{ 'contact.description' | translate }}</p>
+    </div>
 
-  <p>
-  Email:
-  <a href="mailto:6hany61&#64;email.com">
-    6hany61&#64;email.com
-  </a>
-</p>
+    <div class="contact-content">
+      <form class="contact-form glass-effect" (ngSubmit)="submitForm()" data-aos="fade-right">
+        <div class="form-group">
+          <label for="name">{{ 'contact.name' | translate }}</label>
+          <input
+            id="name"
+            type="text"
+            [(ngModel)]="formData.name"
+            name="name"
+            [placeholder]="'contact.namePlaceholder' | translate"
+            required
+          />
+        </div>
 
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/ahmed-adam0">linkedin.com/in/ahmed-adam</a></p>
-  <p>GitHub: <a href="https://github.com/ahmed-adam0">github.com/ahmedadam</a></p>
+        <div class="form-group">
+          <label for="email">{{ 'contact.email' | translate }}</label>
+          <input
+            id="email"
+            type="email"
+            [(ngModel)]="formData.email"
+            name="email"
+            [placeholder]="'contact.emailPlaceholder' | translate"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="message">{{ 'contact.message' | translate }}</label>
+          <textarea
+            id="message"
+            [(ngModel)]="formData.message"
+            name="message"
+            [placeholder]="'contact.messagePlaceholder' | translate"
+            rows="5"
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="submitted">
+          {{ submitted ? ('contact.sending' | translate) : ('contact.send' | translate) }}
+        </button>
+
+        <div *ngIf="successMessage" class="success-message" [@slideInUp]>
+          ✓ {{ 'contact.success' | translate }}
+        </div>
+      </form>
+
+      <div class="contact-info" data-aos="fade-left">
+        <div class="info-card glass-effect">
+          <h3>{{ 'contact.getInTouch' | translate }}</h3>
+          
+          <div class="info-item">
+            <div class="info-icon">📧</div>
+            <div>
+              <h4>{{ 'contact.email' | translate }}</h4>
+              <p>6hany61&#64;gmail.com</p>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <div class="info-icon">📱</div>
+            <div>
+              <h4>{{ 'contact.phone' | translate }}</h4>
+              <p>+20 1016944996x`</p>
+            </div>
+          </div>
+          
+          <div class="info-item">
+            <div class="info-icon">📍</div>
+            <div>
+              <h4>{{ 'contact.location' | translate }}</h4>
+              <p>القاهرة، مصر</p>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="#" class="social-link">GitHub</a>
+            <a href="#" class="social-link">LinkedIn</a>
+            <a href="#" class="social-link">Twitter</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

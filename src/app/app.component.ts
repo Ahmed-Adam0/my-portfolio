@@ -1,17 +1,51 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { HeroComponent } from "./features/hero/hero.component";
 import { ProjectsComponent } from "./features/projects/projects.component";
 import { ContactComponent } from "./features/contact/contact.component";
-//import { RegisterComponent } from "./features/auth/pages/register/register.component";
+import { ThemeLanguageToggleComponent } from "./features/theme-language-toggle/theme-language-toggle.component";
+import { ThemeService } from './services/theme.service';
+import { LanguageService } from './services/language.service';
+import { AnimationService } from './services/animation.service';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeroComponent,  ProjectsComponent, ContactComponent],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    HeroComponent,
+    ProjectsComponent,
+    ContactComponent,
+    ThemeLanguageToggleComponent
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  animations: [
+    trigger('pageAnimation', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('600ms ease-out', style({ opacity: 1 }))
+      ])
+    ])
+  ]
 })
-export class AppComponent {
-  title = 'doctor-appointment-web1';
+export class AppComponent implements OnInit {
+  title = 'my-portfolio';
+  
+  private themeService = inject(ThemeService);
+  private languageService = inject(LanguageService);
+  private animationService = inject(AnimationService);
+
+  ngOnInit(): void {
+    // Initialize theme and language services
+    this.themeService.getTheme();
+    this.languageService.getLanguage();
+    
+    // Initialize AOS animations
+    this.animationService.refreshAOS();
+  }
 }
+

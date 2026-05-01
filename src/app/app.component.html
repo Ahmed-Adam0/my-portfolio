@@ -1,3 +1,22 @@
-<app-hero></app-hero>
-<app-projects></app-projects>
-<app-contact></app-contact>
+<header class="header" [@pageAnimation]>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="logo">
+        <a href="#home">Ahmed Adam</a>
+      </div>
+      <app-theme-language-toggle></app-theme-language-toggle>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <app-hero></app-hero>
+  <app-projects></app-projects>
+  <app-contact></app-contact>
+</main>
+
+<footer class="footer">
+  <div class="footer-container">
+    <p>&copy; 2024 Ahmed Adam. All rights reserved.</p>
+  </div>
+</footer>
