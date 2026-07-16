@@ -8,6 +8,7 @@
   },
   "hero": {
     "greeting": "Hello, I'm",
+    "name": "Ahmed Adam",
     "title": "Full Stack Developer",
     "description": "I create beautiful, responsive web applications with modern technologies",
     "cta": "View My Work",
@@ -17,7 +18,23 @@
     "title": "Featured Projects",
     "description": "Explore my latest work and creative solutions",
     "viewDetails": "View Details",
-    "viewLive": "View Live"
+    "viewLive": "View Live",
+    "project1": {
+      "title": "Medical Booking Platform",
+      "description": "An integrated platform for booking medical appointments with control panels for doctors and patients, and instant notifications."
+    },
+    "project2": {
+      "title": "Professional Portfolio",
+      "description": "A modern personal website with light/dark theme support, instant translation (Arabic/English), and advanced animation effects."
+    },
+    "project3": {
+      "title": "Task Management System",
+      "description": "A project and task management application with drag-and-drop features, and real-time notifications using SignalR."
+    },
+    "project4": {
+      "title": "E-Commerce Store",
+      "description": "A complete e-commerce platform with a shopping cart, multiple payment gateways, and a delivery system."
+    }
   },
   "skills": {
     "title": "My Skills",
@@ -29,10 +46,17 @@
   "contact": {
     "title": "Get In Touch",
     "description": "Let's create something amazing together",
+    "name": "Name",
+    "namePlaceholder": "Your Name",
     "email": "Email",
+    "emailPlaceholder": "your.email@example.com",
     "phone": "Phone",
+    "location": "Location",
+    "getInTouch": "Get In Touch",
     "message": "Message",
+    "messagePlaceholder": "Your message here...",
     "send": "Send Message",
+    "sending": "Sending...",
     "success": "Message sent successfully!",
     "error": "Failed to send message. Please try again."
   },

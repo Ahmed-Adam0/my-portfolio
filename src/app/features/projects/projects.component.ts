@@ -17,29 +17,29 @@ export class ProjectsComponent implements AfterViewInit {
   projects = [
     {
       id: 1,
-      title: 'منصة حجوزات طبية',
-      description: 'منصة متكاملة لحجز المواعيد الطبية مع لوحة تحكم للأطباء والمرضى، وإشعارات فورية.',
+      titleKey: 'projects.project1.title',
+      descriptionKey: 'projects.project1.description',
       tags: ['Angular', '.NET Core', 'SQL Server', 'Bootstrap'],
       icon: '🏥'
     },
     {
       id: 2,
-      title: 'بورتوفوليو احترافي',
-      description: 'موقع شخصي حديث مع دعم الثيم الداكن/الفاتح، الترجمة الفورية (عربي/إنجليزي)، وتأثيرات حركية متقدمة.',
+      titleKey: 'projects.project2.title',
+      descriptionKey: 'projects.project2.description',
       tags: ['Angular', 'GSAP', 'TypeScript', 'RTL'],
       icon: '🎨'
     },
     {
       id: 3,
-      title: 'نظام إدارة المهام',
-      description: 'تطبيق لإدارة المشاريع والمهام مع خاصية السحب والإفلات، والإشعارات اللحظية باستخدام SignalR.',
+      titleKey: 'projects.project3.title',
+      descriptionKey: 'projects.project3.description',
       tags: ['Angular', 'RxJS', 'SignalR', 'Tailwind'],
       icon: '📋'
     },
     {
       id: 4,
-      title: 'متجر إلكتروني',
-      description: 'منصة تجارة إلكترونية متكاملة مع سلة مشتريات، بوابات دفع متعددة، ونظام توصيل.',
+      titleKey: 'projects.project4.title',
+      descriptionKey: 'projects.project4.description',
       tags: ['Angular', 'Node.js', 'MongoDB', 'Stripe'],
       icon: '🛒'
     }
