@@ -2,6 +2,9 @@ import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HeroComponent } from "./features/hero/hero.component";
+import { AboutComponent } from "./features/about/about.component";
+import { SkillsComponent } from "./features/skills/skills.component";
+import { TimelineComponent } from "./features/timeline/timeline.component";
 import { ProjectsComponent } from "./features/projects/projects.component";
 import { ContactComponent } from "./features/contact/contact.component";
 import { ThemeLanguageToggleComponent } from "./features/theme-language-toggle/theme-language-toggle.component";
@@ -17,6 +20,9 @@ import { trigger, transition, style, animate } from '@angular/animations';
     CommonModule,
     RouterOutlet,
     HeroComponent,
+    AboutComponent,
+    SkillsComponent,
+    TimelineComponent,
     ProjectsComponent,
     ContactComponent,
     ThemeLanguageToggleComponent

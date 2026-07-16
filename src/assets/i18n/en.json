@@ -8,11 +8,16 @@
   },
   "hero": {
     "greeting": "Hello, I'm",
-    "name": "Ahmed Adam",
-    "title": "Full Stack Developer",
-    "description": "I create beautiful, responsive web applications with modern technologies",
+    "name": "Ahmed Adam Mahmoud",
+    "title": "Role",
+    "description": "ITI Graduate specializing in Clean Architecture, Web APIs, and high-performance Angular applications.",
     "cta": "View My Work",
     "skills": "Available for freelance"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Who I Am",
+    "description": "I am a Junior Full-Stack .NET & Angular Developer and an ITI intensive Full-Stack Web Development graduate with a Computer Science degree. I have a deep interest in software architecture and clean code practices (SOLID, DRY). I specialize in designing scalable RESTful APIs with Clean/Onion architectures, leveraging ASP.NET Core, EF Core, and CQRS, and building rich, responsive frontend experiences using Angular Standalone components, Signals, and RxJS."
   },
   "projects": {
     "title": "Featured Projects",
@@ -20,28 +25,62 @@
     "viewDetails": "View Details",
     "viewLive": "View Live",
     "project1": {
-      "title": "Medical Booking Platform",
-      "description": "An integrated platform for booking medical appointments with control panels for doctors and patients, and instant notifications."
+      "title": "Smart Home E-Commerce (Graduation Project)",
+      "description": "A comprehensive smart home e-commerce platform with real-time device monitoring. Implemented Clean Architecture backend in ASP.NET Core, CQRS via MediatR, SQL Server, and an Angular client using Signals."
     },
     "project2": {
-      "title": "Professional Portfolio",
-      "description": "A modern personal website with light/dark theme support, instant translation (Arabic/English), and advanced animation effects."
+      "title": "Enterprise E-Commerce Backend",
+      "description": "A high-performance RESTful API using Onion Architecture. Features include generic repository pattern, JWT authentication, AutoMapper, validation using FluentValidation, and Serilog logging."
     },
     "project3": {
-      "title": "Task Management System",
-      "description": "A project and task management application with drag-and-drop features, and real-time notifications using SignalR."
+      "title": "Restaurant Ordering Platform",
+      "description": "An interactive ordering system. Features real-time state tracking using SignalR, dynamic shopping cart management, RxJS state management, and a responsive frontend."
     },
     "project4": {
-      "title": "E-Commerce Store",
-      "description": "A complete e-commerce platform with a shopping cart, multiple payment gateways, and a delivery system."
+      "title": "Smart Hospital Management",
+      "description": "A system managing medical records, appointment scheduling, and doctor-patient communication built with ASP.NET Core Web API and Angular Material dashboard."
+    },
+    "project5": {
+      "title": "Talabat Clone",
+      "description": "A responsive food delivery frontend clone showcasing complex form validation, interactive filters, and stateful cart logic in Angular."
     }
   },
   "skills": {
-    "title": "My Skills",
+    "title": "Technical Stack",
     "description": "Technologies and tools I work with",
     "frontend": "Frontend",
     "backend": "Backend",
-    "tools": "Tools & Others"
+    "tools": "Development Tools & Software Practices",
+    "databases": "Databases"
+  },
+  "timeline": {
+    "title": "My Journey",
+    "subtitle": "Chronological Education & Experience",
+    "cs": {
+      "title": "Computer Science Degree",
+      "period": "2018 - 2022",
+      "description": "Acquired solid foundation in computer science, algorithms, databases, data structures, and object-oriented programming (OOP)."
+    },
+    "military": {
+      "title": "Military Service",
+      "period": "2022 - 2023",
+      "description": "Completed mandatory military service, fostering discipline, time management, and team leadership skills."
+    },
+    "route": {
+      "title": "Route Academy",
+      "period": "2023 - 2024",
+      "description": "Completed intensive frontend training program focusing on JavaScript, TypeScript, Bootstrap, and Angular foundations."
+    },
+    "iti": {
+      "title": "ITI Intensive Full-Stack Program",
+      "period": "2024 - 2025",
+      "description": "Graduated from the Intensive Full-Stack Web Development using .NET & Angular track. Mastered Clean Architecture, ASP.NET Core APIs, Entity Framework Core, SQL Server, and advanced Angular applications."
+    },
+    "current": {
+      "title": "Current Projects",
+      "period": "2025 - Present",
+      "description": "Building enterprise-grade web applications utilizing Clean Architecture, CQRS, Signals, and RESTful API integrations."
+    }
   },
   "contact": {
     "title": "Get In Touch",

@@ -134,12 +134,12 @@
 
 .role-container {
   display: flex;
-  align-items: baseline;
-  gap: 12px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
   font-size: 24px;
   font-weight: 700;
-  min-height: 60px;
+  min-height: 90px;
 }
 
 .role-label {
@@ -150,12 +150,18 @@
 .typewriter-text {
   color: var(--accent-primary);
   min-width: 200px;
-  padding: 8px 16px;
+  height: 50px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 16px;
   background: rgba(14, 165, 233, 0.1);
   border-radius: 8px;
   border-left: 3px solid var(--accent-primary);
   font-family: 'Courier New', monospace;
   animation: fadeIn 0.6s 0.6s ease-out both;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @keyframes fadeIn {

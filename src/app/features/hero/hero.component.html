@@ -13,8 +13,17 @@
       <div class="role-container" data-aos="fade-up" data-aos-delay="200">
         <span class="role-label">{{ 'hero.title' | translate }}:</span>
         <span
+          *ngIf="languageService.language$() === 'en'"
           class="typewriter-text"
-          [appTypewriter]="currentRole"
+          [appTypewriter]="currentRoleEn"
+          [speed]="50"
+          [delay]="400"
+          [shouldLoop]="true"
+        ></span>
+        <span
+          *ngIf="languageService.language$() === 'ar'"
+          class="typewriter-text"
+          [appTypewriter]="currentRoleAr"
           [speed]="50"
           [delay]="400"
           [shouldLoop]="true"
@@ -41,6 +50,10 @@
         <span class="badge">SQL Server</span>
         <span class="badge">OOP</span>
         <span class="badge">Design Patterns</span>
+        <span class="badge">CQRS</span>
+        <span class="badge">MediatR</span>
+        <span class="badge">Serilog</span>
+        <span class="badge">RabbitMQ</span>
         <span class="badge">Git</span>
         <span class="badge">GitHub</span>
         <span class="badge">GSAP</span>

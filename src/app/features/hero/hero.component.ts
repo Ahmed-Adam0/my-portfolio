@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { TypewriterDirective } from '../../directives/typewriter.directive';
 import { AnimationService } from '../../services/animation.service';
+import { LanguageService } from '../../services/language.service';
 import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
@@ -28,8 +29,10 @@ import { trigger, transition, style, animate } from '@angular/animations';
 })
 export class HeroComponent {
   private animationService = inject(AnimationService);
+  public languageService = inject(LanguageService);
   
-  currentRole = 'Full Stack Developer';
+  currentRoleEn = 'Full-Stack .NET & Angular Developer';
+  currentRoleAr = 'مطور متكامل .NET و Angular';
 
   scrollToProjects(): void {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });

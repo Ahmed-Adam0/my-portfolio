@@ -19,28 +19,35 @@ export class ProjectsComponent implements AfterViewInit {
       id: 1,
       titleKey: 'projects.project1.title',
       descriptionKey: 'projects.project1.description',
-      tags: ['Angular', '.NET Core', 'SQL Server', 'Bootstrap'],
-      icon: '🏥'
+      tags: ['Angular', 'ASP.NET Core', 'Clean Architecture', 'SignalR', 'SQL Server', 'Stripe'],
+      icon: '🏠'
     },
     {
       id: 2,
       titleKey: 'projects.project2.title',
       descriptionKey: 'projects.project2.description',
-      tags: ['Angular', 'GSAP', 'TypeScript', 'RTL'],
-      icon: '🎨'
+      tags: ['.NET Core', 'Onion Architecture', 'CQRS / MediatR', 'JWT Auth', 'Serilog', 'SQL Server'],
+      icon: '🛡️'
     },
     {
       id: 3,
       titleKey: 'projects.project3.title',
       descriptionKey: 'projects.project3.description',
-      tags: ['Angular', 'RxJS', 'SignalR', 'Tailwind'],
-      icon: '📋'
+      tags: ['Angular', 'RxJS', 'ASP.NET Core', 'SignalR', 'Bootstrap', 'Responsive'],
+      icon: '🍔'
     },
     {
       id: 4,
       titleKey: 'projects.project4.title',
       descriptionKey: 'projects.project4.description',
-      tags: ['Angular', 'Node.js', 'MongoDB', 'Stripe'],
+      tags: ['Angular', 'Angular Material', 'ASP.NET Core API', 'SQL Server'],
+      icon: '🏥'
+    },
+    {
+      id: 5,
+      titleKey: 'projects.project5.title',
+      descriptionKey: 'projects.project5.description',
+      tags: ['Angular', 'TypeScript', 'Reactive Forms', 'Bootstrap', 'CSS3'],
       icon: '🛒'
     }
   ];

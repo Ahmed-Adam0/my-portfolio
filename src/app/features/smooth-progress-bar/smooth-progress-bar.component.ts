@@ -11,7 +11,6 @@ import { AnimationService } from '../../services/animation.service';
     <div class="progress-container" [attr.data-visible]="isVisible">
       <div class="progress-label">
         <span class="label-text">{{ label }}</span>
-        <span class="percentage">{{ percentage }}%</span>
       </div>
       <div class="progress-bar-bg">
         <div
