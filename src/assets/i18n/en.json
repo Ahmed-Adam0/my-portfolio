@@ -91,6 +91,7 @@
     "emailPlaceholder": "your.email@example.com",
     "phone": "Phone",
     "location": "Location",
+    "locationValue": "Cairo, Egypt",
     "getInTouch": "Get In Touch",
     "message": "Message",
     "messagePlaceholder": "Your message here...",

@@ -91,6 +91,7 @@
     "emailPlaceholder": "your.email@example.com",
     "phone": "الهاتف",
     "location": "الموقع",
+    "locationValue": "القاهرة، مصر",
     "getInTouch": "تواصل معي",
     "message": "الرسالة",
     "messagePlaceholder": "رسالتك هنا...",
